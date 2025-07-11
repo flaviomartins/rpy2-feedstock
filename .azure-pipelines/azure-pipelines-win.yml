@@ -26,12 +26,19 @@ jobs:
       win_64_python3.12.____cpythonr_base4.4:
         CONFIG: win_64_python3.12.____cpythonr_base4.4
         UPLOAD_PACKAGES: 'True'
+      win_64_python3.13.____cp313r_base4.3:
+        CONFIG: win_64_python3.13.____cp313r_base4.3
+        UPLOAD_PACKAGES: 'True'
+      win_64_python3.13.____cp313r_base4.4:
+        CONFIG: win_64_python3.13.____cp313r_base4.4
+        UPLOAD_PACKAGES: 'True'
       win_64_python3.9.____cpythonr_base4.3:
         CONFIG: win_64_python3.9.____cpythonr_base4.3
         UPLOAD_PACKAGES: 'True'
       win_64_python3.9.____cpythonr_base4.4:
         CONFIG: win_64_python3.9.____cpythonr_base4.4
         UPLOAD_PACKAGES: 'True'
+    maxParallel: 8
   timeoutInMinutes: 360
   variables:
     CONDA_BLD_PATH: D:\\bld\\

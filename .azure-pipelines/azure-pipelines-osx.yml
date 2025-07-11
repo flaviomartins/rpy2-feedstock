@@ -26,6 +26,12 @@ jobs:
       osx_64_python3.12.____cpythonr_base4.4:
         CONFIG: osx_64_python3.12.____cpythonr_base4.4
         UPLOAD_PACKAGES: 'True'
+      osx_64_python3.13.____cp313r_base4.3:
+        CONFIG: osx_64_python3.13.____cp313r_base4.3
+        UPLOAD_PACKAGES: 'True'
+      osx_64_python3.13.____cp313r_base4.4:
+        CONFIG: osx_64_python3.13.____cp313r_base4.4
+        UPLOAD_PACKAGES: 'True'
       osx_64_python3.9.____cpythonr_base4.3:
         CONFIG: osx_64_python3.9.____cpythonr_base4.3
         UPLOAD_PACKAGES: 'True'
@@ -50,12 +56,19 @@ jobs:
       osx_arm64_python3.12.____cpythonr_base4.4:
         CONFIG: osx_arm64_python3.12.____cpythonr_base4.4
         UPLOAD_PACKAGES: 'True'
+      osx_arm64_python3.13.____cp313r_base4.3:
+        CONFIG: osx_arm64_python3.13.____cp313r_base4.3
+        UPLOAD_PACKAGES: 'True'
+      osx_arm64_python3.13.____cp313r_base4.4:
+        CONFIG: osx_arm64_python3.13.____cp313r_base4.4
+        UPLOAD_PACKAGES: 'True'
       osx_arm64_python3.9.____cpythonr_base4.3:
         CONFIG: osx_arm64_python3.9.____cpythonr_base4.3
         UPLOAD_PACKAGES: 'True'
       osx_arm64_python3.9.____cpythonr_base4.4:
         CONFIG: osx_arm64_python3.9.____cpythonr_base4.4
         UPLOAD_PACKAGES: 'True'
+    maxParallel: 17
   timeoutInMinutes: 360
   variables: {}
 
