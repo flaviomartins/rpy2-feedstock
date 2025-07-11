@@ -14,32 +14,14 @@ source:
 build:
   number: 0
 
-requirements:
-  build:
-    - python                              # [build_platform != target_platform]
-    - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-    - cffi                                # [build_platform != target_platform]
-    - {{ stdlib("c") }}
-    - {{ compiler('c') }}
-    - {{ posix }}make
-    - {{ posix }}base                     # [win]
-  host:
-    - python
-    - setuptools
-    - pip
-    - r-base
-    - cffi >=1.15.1
-  run:
-    - python
-    - r-base
-    - cffi >=1.15.1
-    - packaging  # [win]
-
 outputs:
   - name: {{ name|lower }}-rinterface
     script: build-rinterface.sh   # [unix]
     script: bld-rinterface.bat    # [win]
     build:
+      rpaths:
+        - lib/R/lib/
+        - lib/
       run_exports:
         - {{ pin_subpackage("rpy2-rinterface", max_pin="x.x.x") }}
     requirements:
@@ -49,13 +31,17 @@ outputs:
         - {{ stdlib("c") }}
         - {{ compiler('c') }}
         - {{ posix }}make
-        - {{ posix }}base                     # [win]
+        - {{ posix }}base                  # [win]
+        - liblzma-devel                    # [build_platform != target_platform]
+        - zlib                             # [build_platform != target_platform]
       host:
         - python
         - setuptools
         - pip
         - r-base
         - cffi >=1.15.1
+        - liblzma-devel
+        - zlib
       run:
         - python
         - r-base
