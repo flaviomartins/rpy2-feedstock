@@ -1,3 +1,4 @@
+{% set name = "rpy2" %}
 {% set version = "3.6.1" %}
 {% set posix = 'm2-' if win else '' %}
 
@@ -24,46 +25,76 @@ requirements:
   host:
     - python
     - setuptools
-    - distutils-activate-mingw  # [win]
     - pip
     - r-base
-    - jinja2
-    - pytz
-    - simplegeneric
-    - tzlocal
-    - cffi >=1.10.0,!=1.13.0
+    - cffi >=1.15.1
   run:
     - python
     - r-base
-    - jinja2
-    - pytz
-    - simplegeneric
-    - tzlocal
+    - cffi >=1.15.1
     - packaging  # [win]
-    - cffi >=1.10.0,!=1.13.0
 
-test:
-  source_files:
-    - rpy2/tests
-  requires:
-    - r-cairo  # [not (aarch64 or ppc64le)]
-    - r-survival
-    - r-ggplot2 >=2.2.1
-    - ipython
-    - numpy
-    - pandas
-    - pytest
-  imports:
-    - rpy2
-    - rpy2.rlike
-    # calls `get_rlib_path` an that only works for *nix
-    - rpy2.ipython       # [not win]
-    - rpy2.rinterface    # [not win]
-    - rpy2.robjects      # [not win]
-    - rpy2.robjects.lib  # [not win]
-  commands:
-    - pytest -s -rxs -v rpy2/tests -k "not test_display_args and not test_svg_plotting_args and not test_POSIXct_datetime_from_timestamp"  # [not (win or aarch64 or ppc64le)]
-    - pytest -s -rxs -v rpy2/tests --ignore=rpy2/tests/ipython --ignore rpy2/tests/robjects/lib/test_ggplot2.py --ignore rpy2/tests/robjects/lib/test_grdevices.py --ignore rpy2/tests/robjects/lib/test_grid.py -k "not test_POSIXct_datetime_from_timestamp"  # [aarch64 or ppc64le]
+outputs:
+  - name: {{ name|lower }}-rinterface
+    script: build-rinterface.sh   # [unix]
+    script: bld-rinterface.bat    # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("rpy2-rinterface", max_pin="x.x.x") }}
+    requirements:
+      build:
+        - python
+        - cffi
+        - {{ stdlib("c") }}
+        - {{ compiler('c') }}
+        - {{ posix }}make
+        - {{ posix }}base                     # [win]
+      host:
+        - python
+        - setuptools
+        - pip
+        - r-base
+        - cffi >=1.15.1
+      run:
+        - python
+        - r-base
+        - cffi >=1.15.1
+        - packaging  # [win]
+  - name: {{ name|lower }}-robjects
+    script: build-robjects.sh   # [unix]
+    script: bld-robjects.bat    # [win]
+    requirements:
+      build:
+        - python
+        - {{ stdlib("c") }}
+        - {{ compiler('c') }}
+        - {{ posix }}make
+        - {{ posix }}base                     # [win]
+      host:
+        - python
+        - setuptools
+        - pip
+        - r-base
+        - jinja2
+        - tzlocal
+        - {{ pin_subpackage("rpy2-rinterface", exact=True) }}
+      run:
+        - {{ pin_subpackage("rpy2-rinterface", exact=True) }}
+        - python
+        - r-base
+        - jinja2
+        - tzlocal
+  - name: {{ name|lower }}
+    build:
+      noarch: generic
+      skip: true  # [not linux64]
+    requirements:
+      run:
+        - {{ pin_subpackage('rpy2-rinterface', max_pin="x.x.x") }}
+        - {{ pin_subpackage('rpy2-robjects', max_pin="x.x.x") }}
+    test:
+      imports:
+        - rpy2
 
 about:
   home: https://github.com/rpy2/rpy2
