@@ -48,6 +48,17 @@ outputs:
         - r-base
         - cffi >=1.15.1
         - packaging  # [win]
+    test:
+      requires:
+        - pytest
+      imports:
+        - rpy2
+        - rpy2.rlike
+        # calls `get_rlib_path` and that only works for *nix
+        - rpy2.rinterface       # [not win]
+        - rpy2.rinterface_lib   # [not win]
+      commands:
+        - pytest rpy2-rinterface/
   - name: {{ name|lower }}-robjects
     script: build-robjects.sh   # [unix]
     script: bld-robjects.bat    # [win]
@@ -76,6 +87,24 @@ outputs:
         - r-base
         - jinja2
         - tzlocal
+    test:
+      requires:
+        - r-cairo  # [not (aarch64 or ppc64le)]
+        - r-survival
+        - r-ggplot2 >=2.2.1
+        - ipython
+        - numpy
+        - pandas
+        - pytest
+      imports:
+        - rpy2
+        # calls `get_rlib_path` and that only works for *nix
+        - rpy2.interactive   # [not win]
+        - rpy2.ipython       # [not win]
+        - rpy2.robjects      # [not win]
+        - rpy2.robjects.lib  # [not win]
+      commands:
+        - pytest rpy2-robjects/  # [not (win or aarch64 or ppc64le)]
   - name: {{ name|lower }}
     build:
       noarch: generic
