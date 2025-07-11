@@ -1,6 +1,6 @@
 @echo on
 
-cd rpy2-interface
+cd rpy2-rinterface
 
 echo [build] > setup.cfg
 echo compiler = mingw32 >> setup.cfg
