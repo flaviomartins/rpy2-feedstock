@@ -2,6 +2,8 @@
 
 set -euxo pipefail
 
+cd rpy2-interface
+
 # https://github.com/conda-forge/rpy2-feedstock/issues/79#issuecomment-1000920911
 if [[ "${target_platform}" == "osx-arm64" ]]; then
   export RPY2_CFFI_MODE="API"
