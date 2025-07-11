@@ -378,6 +378,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rpy2-green.svg)](https://anaconda.org/conda-forge/rpy2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rpy2.svg)](https://anaconda.org/conda-forge/rpy2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rpy2.svg)](https://anaconda.org/conda-forge/rpy2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rpy2.svg)](https://anaconda.org/conda-forge/rpy2) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rpy2--rinterface-green.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rpy2-rinterface.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rpy2-rinterface.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rpy2-rinterface.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-rpy2--robjects-green.svg)](https://anaconda.org/conda-forge/rpy2-robjects) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rpy2-robjects.svg)](https://anaconda.org/conda-forge/rpy2-robjects) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rpy2-robjects.svg)](https://anaconda.org/conda-forge/rpy2-robjects) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rpy2-robjects.svg)](https://anaconda.org/conda-forge/rpy2-robjects) |
 
 Installing rpy2
 ===============
@@ -389,16 +391,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rpy2` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `rpy2, rpy2-rinterface, rpy2-robjects` can be installed with `conda`:
 
 ```
-conda install rpy2
+conda install rpy2 rpy2-rinterface rpy2-robjects
 ```
 
 or with `mamba`:
 
 ```
-mamba install rpy2
+mamba install rpy2 rpy2-rinterface rpy2-robjects
 ```
 
 It is possible to list all of the versions of `rpy2` available on your platform with `conda`:
