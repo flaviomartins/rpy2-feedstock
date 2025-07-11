@@ -49,6 +49,8 @@ outputs:
         - cffi >=1.15.1
         - packaging  # [win]
     test:
+      source_files:
+        - rpy2-rinterface/
       requires:
         - pytest
       imports:
@@ -88,6 +90,8 @@ outputs:
         - jinja2
         - tzlocal
     test:
+      source_files:
+        - rpy2-robjects/
       requires:
         - r-cairo  # [not (aarch64 or ppc64le)]
         - r-survival
