@@ -52,6 +52,7 @@ outputs:
       source_files:
         - rpy2-rinterface/
       requires:
+        - r-survival
         - pytest
       imports:
         - rpy2
@@ -94,7 +95,6 @@ outputs:
         - rpy2-robjects/
       requires:
         - r-cairo  # [not (aarch64 or ppc64le)]
-        - r-survival
         - r-ggplot2 >=2.2.1
         - ipython
         - numpy
