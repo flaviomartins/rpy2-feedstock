@@ -63,6 +63,9 @@ outputs:
   - name: {{ name|lower }}-robjects
     script: build-robjects.sh   # [unix]
     script: bld-robjects.bat    # [win]
+    build:
+      run_exports:
+        - {{ pin_subpackage("rpy2-robjects", max_pin="x.x.x") }}
     requirements:
       build:
         - python
