@@ -113,11 +113,9 @@ outputs:
   - name: {{ name|lower }}
     script: build.sh
     build:
-      noarch: generic
+      noarch: python
       skip: true  # [not linux64]
     requirements:
-      build:
-        - python
       host:
         - python
         - setuptools
