@@ -1,4 +1,4 @@
 @echo on
 
-%PYTHON% -m pip install --no-deps --ignore-installed . -vv
+%PYTHON% -m pip install . -vv
 if %ERRORLEVEL% neq 0 exit 1
