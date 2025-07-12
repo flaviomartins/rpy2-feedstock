@@ -112,7 +112,8 @@ outputs:
       commands:
         - pytest -s -rxs -v rpy2-robjects/ -k "not test_svg_plotting_args and not test_POSIXct_datetime_from_timestamp"  # [not (win or aarch64 or ppc64le)]
   - name: {{ name|lower }}
-    script: python -m pip install . --no-deps --ignore-installed -vv
+    script: build-rpy2.sh   # [unix]
+    script: bld-rpy2.bat    # [win]
     build:
       noarch: python
     requirements:
