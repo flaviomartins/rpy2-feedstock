@@ -32,8 +32,6 @@ outputs:
         - {{ compiler('c') }}
         - {{ posix }}make
         - {{ posix }}base                  # [win]
-        - cross-r-base {{ r_base }}        # [build_platform != target_platform]
-        - r-base                           # [build_platform != target_platform]
         - liblzma-devel                    # [build_platform != target_platform]
         - zlib                             # [build_platform != target_platform]
       host:
@@ -58,6 +56,7 @@ outputs:
         - {{ posix }}make  # [win]
         - pytest
       imports:
+        - rpy2
         - rpy2.rlike
         - rpy2.situation
         # calls `get_rlib_path` and that only works for *nix
