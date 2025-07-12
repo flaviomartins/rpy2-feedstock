@@ -68,7 +68,7 @@ jobs:
       osx_arm64_python3.9.____cpythonr_base4.4:
         CONFIG: osx_arm64_python3.9.____cpythonr_base4.4
         UPLOAD_PACKAGES: 'True'
-    maxParallel: 17
+    maxParallel: 20
   timeoutInMinutes: 360
   variables: {}
 
@@ -91,5 +91,3 @@ jobs:
     displayName: Run OSX build
     env:
       BINSTAR_TOKEN: $(BINSTAR_TOKEN)
-      FEEDSTOCK_TOKEN: $(FEEDSTOCK_TOKEN)
-      STAGING_BINSTAR_TOKEN: $(STAGING_BINSTAR_TOKEN)
