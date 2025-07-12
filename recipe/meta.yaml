@@ -111,13 +111,21 @@ outputs:
       commands:
         - pytest -s -rxs -v rpy2-robjects/ -k "not test_svg_plotting_args and not test_POSIXct_datetime_from_timestamp"  # [not (win or aarch64 or ppc64le)]
   - name: {{ name|lower }}
+    script: build.sh
     build:
       noarch: generic
       skip: true  # [not linux64]
     requirements:
+      build:
+        - python
+      host:
+        - python
+        - setuptools
+        - pip
       run:
         - {{ pin_subpackage('rpy2-rinterface', max_pin="x.x.x") }}
         - {{ pin_subpackage('rpy2-robjects', max_pin="x.x.x") }}
+        - python
     test:
       imports:
         - rpy2
