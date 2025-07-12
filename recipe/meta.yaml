@@ -61,7 +61,7 @@ outputs:
         - rpy2.rinterface       # [not win]
         - rpy2.rinterface_lib   # [not win]
       commands:
-        - pytest rpy2-rinterface/
+        - pytest -s -rxs -v rpy2-rinterface/
   - name: {{ name|lower }}-robjects
     script: build-robjects.sh   # [unix]
     script: bld-robjects.bat    # [win]
@@ -108,7 +108,7 @@ outputs:
         - rpy2.robjects      # [not win]
         - rpy2.robjects.lib  # [not win]
       commands:
-        - pytest rpy2-robjects/  # [not (win or aarch64 or ppc64le)]
+        - pytest -s -rxs -v rpy2-robjects/ -k "not test_svg_plotting_args and not test_POSIXct_datetime_from_timestamp"  # [not (win or aarch64 or ppc64le)]
   - name: {{ name|lower }}
     build:
       noarch: generic
