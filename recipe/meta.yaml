@@ -21,7 +21,6 @@ outputs:
     build:
       rpaths:
         - lib/R/lib/
-        - lib/
       run_exports:
         - {{ pin_subpackage("rpy2-rinterface", max_pin="x.x.x") }}
     requirements:
@@ -33,6 +32,8 @@ outputs:
         - {{ compiler('c') }}
         - {{ posix }}make
         - {{ posix }}base                  # [win]
+        - cross-r-base {{ r_base }}        # [build_platform != target_platform]
+        - r-base                           # [build_platform != target_platform]
         - liblzma-devel                    # [build_platform != target_platform]
         - zlib                             # [build_platform != target_platform]
       host:
