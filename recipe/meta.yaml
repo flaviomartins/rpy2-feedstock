@@ -53,10 +53,12 @@ outputs:
         - rpy2-rinterface/
       requires:
         - r-survival
+        - numpy
+        - {{ posix }}make  # [win]
         - pytest
       imports:
-        - rpy2
         - rpy2.rlike
+        - rpy2.situation
         # calls `get_rlib_path` and that only works for *nix
         - rpy2.rinterface       # [not win]
         - rpy2.rinterface_lib   # [not win]
@@ -101,7 +103,6 @@ outputs:
         - pandas
         - pytest
       imports:
-        - rpy2
         # calls `get_rlib_path` and that only works for *nix
         - rpy2.interactive   # [not win]
         - rpy2.ipython       # [not win]
