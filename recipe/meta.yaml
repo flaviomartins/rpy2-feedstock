@@ -1,5 +1,6 @@
 {% set name = "rpy2" %}
 {% set version = "3.6.1" %}
+{% set python_min = "3.9" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -115,14 +116,17 @@ outputs:
       noarch: python
       script: python -m pip install . --no-deps --ignore-installed -vv
     requirements:
+      build:                                                   # [build_platform != target_platform]
+        - python {{ python_min }}                              # [build_platform != target_platform]
+        - cross-python_{{ target_platform }} {{ python_min }}  # [build_platform != target_platform]
       host:
-        - python
+        - python {{ python_min }}
         - setuptools
         - pip
       run:
         - {{ pin_subpackage('rpy2-rinterface', max_pin="x.x.x") }}
         - {{ pin_subpackage('rpy2-robjects', max_pin="x.x.x") }}
-        - python
+        - python >={{ python_min }}
     test:
       imports:
         - rpy2
