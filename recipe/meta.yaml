@@ -40,7 +40,6 @@ outputs:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - r-base                              # [build_platform != target_platform]
         - liblzma-devel                       # [build_platform != target_platform]
         - zlib                                # [build_platform != target_platform]
         - libdeflate                          # [build_platform != target_platform]
@@ -103,7 +102,6 @@ outputs:
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
         - {{ compiler('cxx') }}
-        - r-base                              # [build_platform != target_platform]
         - {{ posix }}make
         - {{ posix }}base                     # [win]
       host:
