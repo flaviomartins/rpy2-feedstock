@@ -45,7 +45,6 @@ outputs:
         - libdeflate                          # [build_platform != target_platform]
         - {{ posix }}make
         - {{ posix }}base                     # [win]
-        - cross-r-base {{ r_base }}           # [build_platform != target_platform]
         - llvm-openmp                         # [osx]
         - libgomp                             # [linux]
       host:
@@ -105,7 +104,6 @@ outputs:
         - {{ compiler('cxx') }}
         - {{ posix }}make
         - {{ posix }}base                     # [win]
-        - cross-r-base {{ r_base }}           # [build_platform != target_platform]
       host:
         - python
         - pip
