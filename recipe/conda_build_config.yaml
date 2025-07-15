@@ -1,9 +1,3 @@
-# Keep building with gcc 10 for compatibility with packages
-# that build R pacakges with CUDA (eg: xgboost)
-c_compiler_version:        # [linux]
-  - 10                     # [linux]
-cxx_compiler_version:      # [linux]
-  - 10                     # [linux]
 c_compiler:                # [win]
   - gcc                    # [win]
 c_compiler_version:        # [win]
