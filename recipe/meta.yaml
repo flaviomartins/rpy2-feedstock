@@ -36,8 +36,9 @@ outputs:
         - zlib                             # [build_platform != target_platform]
       host:
         - python
-        - setuptools
         - pip
+        - setuptools >=61
+        - wheel
         - r-base
         - cffi >=1.15.1
         - liblzma-devel
@@ -80,8 +81,9 @@ outputs:
         - {{ posix }}base                     # [win]
       host:
         - python
-        - setuptools
         - pip
+        - setuptools >=61
+        - wheel
         - r-base
         - jinja2
         - tzlocal
