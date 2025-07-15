@@ -22,7 +22,6 @@ outputs:
       rpaths:
         - lib/R/lib/
         - lib/
-      detect_binary_files_with_prefix: true
       run_exports:
         - {{ pin_subpackage("rpy2-rinterface", max_pin="x.x.x") }}
     requirements:
@@ -32,10 +31,13 @@ outputs:
         - cffi                                # [build_platform != target_platform]
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
         - liblzma-devel                       # [build_platform != target_platform]
         - zlib                                # [build_platform != target_platform]
+        - libdeflate                          # [build_platform != target_platform]
         - {{ posix }}make
         - {{ posix }}base                     # [win]
+        - cross-r-base {{ r_base }}           # [build_platform != target_platform]
         - llvm-openmp                         # [osx]
         - libgomp                             # [linux]
       host:
@@ -48,9 +50,9 @@ outputs:
         - r-base
         - cffi >=1.15.1
         - liblzma-devel
+        - libdeflate
         - zlib
       run:
-        - {{ pin_compatible('llvm-openmp', max_pin=None) }}      # [osx]
         - python
         - r-base
         - cffi >=1.15.1
@@ -84,8 +86,10 @@ outputs:
         - cross-python_{{ target_platform }}  # [build_platform != target_platform]
         - {{ stdlib('c') }}
         - {{ compiler('c') }}
+        - {{ compiler('cxx') }}
         - {{ posix }}make
         - {{ posix }}base                     # [win]
+        - cross-r-base {{ r_base }}           # [build_platform != target_platform]
       host:
         - python
         - pip
