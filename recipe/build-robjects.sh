@@ -6,4 +6,4 @@ cd rpy2-robjects
 
 export CFLAGS="-I${PREFIX}/include ${CFLAGS}"
 
-${PYTHON} -m pip install --no-deps --no-build-isolation . -vv
+${PYTHON} -m pip install --no-deps . -vv
