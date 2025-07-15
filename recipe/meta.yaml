@@ -18,15 +18,15 @@ outputs:
   - name: {{ name|lower }}-rinterface
     script: build-rinterface.sh   # [unix]
     script: bld-rinterface.bat    # [win]
-    script_env:
-      # Workaround an upstream conda-build issue w/pip & `outputs` by setting env vars manually.
-      # xref: https://github.com/conda/conda-build/issues/3993
-      - PIP_NO_BUILD_ISOLATION=False
-      - PIP_NO_DEPENDENCIES=True
-      - PIP_IGNORE_INSTALLED=True
-      - PIP_CACHE_DIR=pip_cache
-      - PIP_NO_INDEX=True
     build:
+      script_env:
+        # Workaround an upstream conda-build issue w/pip & `outputs` by setting env vars manually.
+        # xref: https://github.com/conda/conda-build/issues/3993
+        - PIP_NO_BUILD_ISOLATION=False
+        - PIP_NO_DEPENDENCIES=True
+        - PIP_IGNORE_INSTALLED=True
+        - PIP_CACHE_DIR=pip_cache
+        - PIP_NO_INDEX=True
       rpaths:
         - lib/R/lib/
         - lib/
@@ -85,15 +85,15 @@ outputs:
   - name: {{ name|lower }}-robjects
     script: build-robjects.sh   # [unix]
     script: bld-robjects.bat    # [win]
-    script_env:
-      # Workaround an upstream conda-build issue w/pip & `outputs` by setting env vars manually.
-      # xref: https://github.com/conda/conda-build/issues/3993
-      - PIP_NO_BUILD_ISOLATION=False
-      - PIP_NO_DEPENDENCIES=True
-      - PIP_IGNORE_INSTALLED=True
-      - PIP_CACHE_DIR=pip_cache
-      - PIP_NO_INDEX=True
     build:
+      script_env:
+        # Workaround an upstream conda-build issue w/pip & `outputs` by setting env vars manually.
+        # xref: https://github.com/conda/conda-build/issues/3993
+        - PIP_NO_BUILD_ISOLATION=False
+        - PIP_NO_DEPENDENCIES=True
+        - PIP_IGNORE_INSTALLED=True
+        - PIP_CACHE_DIR=pip_cache
+        - PIP_NO_INDEX=True
       run_exports:
         - {{ pin_subpackage("rpy2-robjects", max_pin="x.x.x") }}
     requirements:
