@@ -33,7 +33,6 @@ requirements:
     - python
     - pip
     - setuptools >=61
-    - wheel
     - jinja2
     - tzlocal
     - r-base
