@@ -44,7 +44,7 @@ requirements:
     - r-base
     - cffi >=1.15.1
     - liblzma-devel
-    - libdeflate
+    - libdeflate                          # [not win]
     - zlib
   run:
     - python
