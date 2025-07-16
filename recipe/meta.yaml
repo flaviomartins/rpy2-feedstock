@@ -15,9 +15,9 @@ build:
   number: 0
 
 outputs:
-  - name: {{ name|lower }}-rinterface
-    script: build-rinterface.sh   # [unix]
-    script: bld-rinterface.bat    # [win]
+  - name: {{ name|lower }}
+    script: build.sh   # [unix]
+    script: bld.bat    # [win]
     build:
       script_env:
         # Workaround an upstream conda-build issue w/pip & `outputs` by setting env vars manually.
@@ -30,8 +30,6 @@ outputs:
       rpaths:
         - lib/R/lib/
         - lib/
-      run_exports:
-        - {{ pin_subpackage("rpy2-rinterface", max_pin="x.x.x") }}
     requirements:
       build:
         - python                              # [build_platform != target_platform]
@@ -54,6 +52,8 @@ outputs:
         - pip
         - setuptools >=61
         - wheel
+        - jinja2
+        - tzlocal
         - r-base
         - cffi >=1.15.1
         - liblzma-devel
@@ -61,80 +61,26 @@ outputs:
         - zlib
       run:
         - python
+        - jinja2
+        - tzlocal
         - r-base
         - cffi >=1.15.1
         - packaging
     test:
       source_files:
-        - rpy2-rinterface/
-      requires:
-        - r-survival
-        - numpy
-        - {{ posix }}make  # [win]
-        - pytest
-      commands:
-        - pytest -s -rxs -v rpy2-rinterface/
-  - name: {{ name|lower }}-robjects
-    script: build-robjects.sh   # [unix]
-    script: bld-robjects.bat    # [win]
-    build:
-      script_env:
-        # Workaround an upstream conda-build issue w/pip & `outputs` by setting env vars manually.
-        # xref: https://github.com/conda/conda-build/issues/3993
-        - PIP_NO_BUILD_ISOLATION=False
-        - PIP_NO_DEPENDENCIES=True
-        - PIP_IGNORE_INSTALLED=True
-        - PIP_CACHE_DIR=pip_cache
-        - PIP_NO_INDEX=True
-      run_exports:
-        - {{ pin_subpackage("rpy2-robjects", max_pin="x.x.x") }}
-    requirements:
-      build:
-        - python                              # [build_platform != target_platform]
-        - cross-python_{{ target_platform }}  # [build_platform != target_platform]
-        - {{ stdlib('c') }}
-        - {{ compiler('c') }}
-        - {{ compiler('cxx') }}
-        - {{ posix }}make
-        - {{ posix }}base                     # [win]
-      host:
-        - python
-        - pip
-        - setuptools >=61
-        - wheel
-        - r-base
-        - jinja2
-        - tzlocal
-        - {{ pin_subpackage("rpy2-rinterface", exact=True) }}
-      run:
-        - {{ pin_subpackage("rpy2-rinterface", exact=True) }}
-        - python
-        - r-base
-        - jinja2
-        - tzlocal
-    test:
-      source_files:
-        - rpy2-robjects/
+        - ./
       requires:
         - r-cairo  # [not (aarch64 or ppc64le)]
         - r-ggplot2 >=2.2.1
+        - r-survival
         - ipython
         - numpy
         - pandas
         - pytest
+        - {{ posix }}make  # [win]
       commands:
+        - pytest -s -rxs -v rpy2-rinterface/
         - pytest -s -rxs -v rpy2-robjects/ -k "not test_svg_plotting_args and not test_POSIXct_datetime_from_timestamp"  # [not (win or aarch64 or ppc64le)]
-  - name: {{ name|lower }}
-    build:
-      noarch: python
-      skip: true  # [not linux64]
-    requirements:
-      host:
-        - python
-      run:
-        - {{ pin_subpackage('rpy2-rinterface', max_pin="x.x.x") }}
-        - {{ pin_subpackage('rpy2-robjects', max_pin="x.x.x") }}
-        - python
 
 about:
   home: https://github.com/rpy2/rpy2
