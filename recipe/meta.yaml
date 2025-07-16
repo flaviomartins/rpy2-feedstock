@@ -43,9 +43,9 @@ requirements:
     - tzlocal
     - r-base
     - cffi >=1.15.1
-    - liblzma-devel
+    - liblzma-devel                       # [not win]
     - libdeflate                          # [not win]
-    - zlib
+    - zlib                                # [not win]
   run:
     - python
     - jinja2
@@ -58,7 +58,7 @@ test:
   source_files:
     - ./
   requires:
-    - r-cairo  # [not (aarch64 or ppc64le)]
+    - r-cairo  # [not (aarch64 or ppc64le or win)]
     - r-ggplot2 >=2.2.1
     - r-survival
     - ipython
