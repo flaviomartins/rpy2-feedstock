@@ -58,7 +58,7 @@ test:
   source_files:
     - ./
   requires:
-    - r-cairo  # [not (aarch64 or ppc64le or win)]
+    - r-cairo  # [not (win or aarch64 or ppc64le)]
     - r-ggplot2 >=2.2.1
     - r-survival
     - ipython
