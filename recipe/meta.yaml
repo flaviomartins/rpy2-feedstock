@@ -63,7 +63,7 @@ outputs:
         - python
         - r-base
         - cffi >=1.15.1
-        - packaging  # [win]
+        - packaging
     test:
       source_files:
         - rpy2-rinterface/
