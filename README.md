@@ -29,38 +29,73 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_python3.10.____cpython</td>
+              <td>linux_64_python3.10.____cpythonr_base4.3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpythonr_base4.3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.11.____cpython</td>
+              <td>linux_64_python3.10.____cpythonr_base4.4</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.10.____cpythonr_base4.4" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.12.____cpython</td>
+              <td>linux_64_python3.11.____cpythonr_base4.3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpythonr_base4.3" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.13.____cp313</td>
+              <td>linux_64_python3.11.____cpythonr_base4.4</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.13.____cp313" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.11.____cpythonr_base4.4" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_python3.9.____cpython</td>
+              <td>linux_64_python3.12.____cpythonr_base4.3</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpython" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpythonr_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.12.____cpythonr_base4.4</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.12.____cpythonr_base4.4" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.13.____cp313r_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.13.____cp313r_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.13.____cp313r_base4.4</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.13.____cp313r_base4.4" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.9.____cpythonr_base4.3</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpythonr_base4.3" alt="variant">
+                </a>
+              </td>
+            </tr><tr>
+              <td>linux_64_python3.9.____cpythonr_base4.4</td>
+              <td>
+                <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=4313&branchName=main">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/rpy2-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_python3.9.____cpythonr_base4.4" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -427,8 +462,6 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-rpy2-green.svg)](https://anaconda.org/conda-forge/rpy2) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rpy2.svg)](https://anaconda.org/conda-forge/rpy2) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rpy2.svg)](https://anaconda.org/conda-forge/rpy2) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rpy2.svg)](https://anaconda.org/conda-forge/rpy2) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-rpy2--rinterface-green.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rpy2-rinterface.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rpy2-rinterface.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rpy2-rinterface.svg)](https://anaconda.org/conda-forge/rpy2-rinterface) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-rpy2--robjects-green.svg)](https://anaconda.org/conda-forge/rpy2-robjects) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/rpy2-robjects.svg)](https://anaconda.org/conda-forge/rpy2-robjects) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/rpy2-robjects.svg)](https://anaconda.org/conda-forge/rpy2-robjects) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/rpy2-robjects.svg)](https://anaconda.org/conda-forge/rpy2-robjects) |
 
 Installing rpy2
 ===============
@@ -440,16 +473,16 @@ conda config --add channels conda-forge
 conda config --set channel_priority strict
 ```
 
-Once the `conda-forge` channel has been enabled, `rpy2, rpy2-rinterface, rpy2-robjects` can be installed with `conda`:
+Once the `conda-forge` channel has been enabled, `rpy2` can be installed with `conda`:
 
 ```
-conda install rpy2 rpy2-rinterface rpy2-robjects
+conda install rpy2
 ```
 
 or with `mamba`:
 
 ```
-mamba install rpy2 rpy2-rinterface rpy2-robjects
+mamba install rpy2
 ```
 
 It is possible to list all of the versions of `rpy2` available on your platform with `conda`:
