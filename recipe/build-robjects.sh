@@ -2,7 +2,7 @@
 
 set -euxo pipefail
 
-if [[ "${target_platform}" == "osx-64" || "${target_platform}" == "linux-aarch64" ]]; then
+if [[ "${target_platform}" == "osx-64" || "${target_platform}" == "linux-aarch64" || "${target_platform}" == "linux-ppc64le" ]]; then
   export RPY2_CFFI_MODE="API"
 fi
 
