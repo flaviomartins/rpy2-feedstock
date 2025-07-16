@@ -2,11 +2,8 @@
 
 set -euxo pipefail
 
-# Prevent running ldconfig when cross-compiling.
-if [[ "${BUILD}" != "${HOST}" ]]; then
-  echo "#!/usr/bin/env bash" > ldconfig
-  chmod +x ldconfig
-  export PATH=${PWD}:$PATH
+if [[ "${target_platform}" == "osx-64" || "${target_platform}" == "linux-aarch64" ]]; then
+  export RPY2_CFFI_MODE="API"
 fi
 
 cd rpy2-rinterface
